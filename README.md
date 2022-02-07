@@ -8,4 +8,10 @@ Rough flow of the program
 * init_instance then calls make_instance and then calls the __init__ method from the new class which is itself just a dispatch dictionary. 
 * make_instance relies on bind_method for automatic binding of any methods called by the instance to the instance.
 
+Repo Info
+* classes.py holds the general class implementation.
+* account.py creates an account class.
+* checking_account.py creates a checking account class that inherits from the account class.
+* main.py shows how these classes can be used without dot notation.
+
 

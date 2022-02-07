@@ -18,12 +18,14 @@ def make_instance(cls):
   def set_value(name, value):
     attributes[name] = value
   attributes = {}
+  # all about defining this instance dispatch dictionary
   instance = {'get': get_value, 'set': set_value}
   return instance
 
 def bind_method(value, instance):
   """Return a bound method if value is callable, or value otherwise.
-  If a method is called, self will be bound to the value of instance. If called on noncallable value, just returns value."""
+  If a method is called, self will be bound to the value of instance. If called on noncallable value, just returns value.
+  Implication is call methods have to have self as first parameter."""
   if callable(value):
     def method(*args):
       return value(instance, *args)
